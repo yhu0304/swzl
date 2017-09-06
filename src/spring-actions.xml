@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	
+	
+	
+	<bean id="manageAction"  class="com.lostfound.action.ManageAction">
+	
+	<property name="userDao"><ref bean="userDao"/> </property>
+	<property name="goodsDao"><ref bean="goodsDao"/> </property>
+	<property name="thanksDao"><ref bean="thanksDao"/> </property>
+	<property name="replyDao"><ref bean="replyDao"/> </property>
+	<property name="claimuserDao"><ref bean="claimuserDao"/> </property>
+	</bean>
+	
+	<bean id="userAction"  class="com.lostfound.action.UserAction">
+	
+	<property name="userDao"><ref bean="userDao"/> </property>
+	<property name="goodsDao"><ref bean="goodsDao"/> </property>
+	<property name="thanksDao"><ref bean="thanksDao"/> </property>
+	<property name="claimuserDao"><ref bean="claimuserDao"/> </property>
+	</bean>
+	
+	
+	<bean id="goodsAction"  class="com.lostfound.action.GoodsAction">
+	
+	<property name="goodsDao"><ref bean="goodsDao"/> </property>
+	<property name="replyDao"><ref bean="replyDao"/> </property>
+	
+	</bean>
+	
+	<bean id="thanksAction"  class="com.lostfound.action.ThanksLetterAction">
+	
+	<property name="thanksDao"><ref bean="thanksDao"/> </property>
+	
+	</bean>
+</beans>
